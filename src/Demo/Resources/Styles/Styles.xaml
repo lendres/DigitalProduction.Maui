@@ -404,7 +404,6 @@
 		</Setter>
 	</Style>
 
-
 	<Style TargetType="TimePicker">
 		<Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"/>
 		<Setter Property="BackgroundColor" Value="Transparent"/>
