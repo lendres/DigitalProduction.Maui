@@ -18,7 +18,7 @@
 			<Grid ColumnDefinitions="76,*" RowDefinitions="40,40,40" RowSpacing="0" ColumnSpacing="10" Margin="0" Padding="0"
 				HorizontalOptions="Fill" VerticalOptions="Start">
 
-				<Switch Grid.Column="0"  Grid.Row="0" VerticalOptions="Center" HorizontalOptions="End"
+				<Switch Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="End"
 					IsToggled="{Binding RemoveNotFoundPaths}"/>
 				<Label Grid.Column="1" Grid.Row="0" VerticalOptions="Center" VerticalTextAlignment="Center"
 					Text="Remove paths that do not exist."/>
