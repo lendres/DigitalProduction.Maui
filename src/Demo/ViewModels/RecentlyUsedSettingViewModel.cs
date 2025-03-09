@@ -4,13 +4,12 @@ using System.Collections.ObjectModel;
 
 namespace DigitalProduction.Demo.ViewModels;
 
-public partial class RecentlyUsedSettingViewModel : ObservableObject
+public partial class RecentlyUsedSettingViewModel : BaseViewModel
 {
-	private readonly IRecentPathsManagerService      _recentPathsManagerService;
+	private readonly IRecentPathsManagerService _recentPathsManagerService = Maui.Services.ServiceProvider.GetService<IRecentPathsManagerService>();
 
 	public RecentlyUsedSettingViewModel()
 	{
-		_recentPathsManagerService = Maui.Services.ServiceProvider.GetService<IRecentPathsManagerService>();
 		Initialize();
 	}
 

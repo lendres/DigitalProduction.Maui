@@ -7,3 +7,4 @@ using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Style", "IDE0130:Namespace does not match folder structure", Justification = "<Pending>", Scope = "namespace", Target = "~N:DigitalProduction.Maui.DynamicMenus")]
 [assembly: SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "<Pending>", Scope = "member", Target = "~M:DigitalProduction.Maui.DynamicMenus.MenuService.ForceMenuRebuild")]
+[assembly: SuppressMessage("Performance", "CA1826:Do not use Enumerable methods on indexable collections", Justification = "Readability", Scope = "member", Target = "~M:DigitalProduction.Maui.Platforms.Windows.Storage.SaveFilePicker.PickAsync(System.String,Microsoft.Maui.Storage.PickOptions)~System.Threading.Tasks.Task{Microsoft.Maui.Storage.FileResult}")]

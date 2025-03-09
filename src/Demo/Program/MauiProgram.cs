@@ -7,7 +7,9 @@ using DigitalProduction.Demo.Pages;
 using DigitalProduction.Demo.ViewModels;
 using DigitalProduction.Maui;
 using DigitalProduction.Maui.Services;
+using DigitalProduction.Maui.Storage;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DigitalProduction.Demo;
 
@@ -44,6 +46,7 @@ public static class MauiProgram
 		services.AddTransientWithShellRoute<DynamicMenusPage, DynamicMenusPageViewModel>();
 		services.AddTransientWithShellRoute<RecentlyUsedMenuPage, RecentlyUsedMenuPageViewModel>();
 		services.AddTransientWithShellRoute<StepperPage, StepperPageViewModel>();
+		services.AddTransientWithShellRoute<SaveFilePickerPage, SaveFilePickerPageViewModel>();
 	}
 
 	private static IServiceCollection AddTransientWithShellRoute<TPage, TViewModel>(this IServiceCollection services)
@@ -58,6 +61,7 @@ public static class MauiProgram
 		services.AddSingleton<IDialogService, DialogService>();
 		services.AddSingleton<IMenuService, MenuService>();
 		services.AddSingleton<IRecentPathsManagerService, RecentPathsManagerService>();
+		services.AddSingleton<ISaveFilePicker, SaveFilePicker>();
 	}
 
 	private static void RegisterEssentials(in IServiceCollection services)
