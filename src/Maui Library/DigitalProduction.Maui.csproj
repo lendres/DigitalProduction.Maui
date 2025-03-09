@@ -27,6 +27,10 @@
 		<Title>$(AssemblyName)</Title>
 	</PropertyGroup>
 
+	<Target Name="RunPostBuildEventAfterPack" AfterTargets="Pack" Condition="'$(Configuration)' == 'Release'">
+		<Exec Command="call &quot;$(MSBuildProjectDirectory)\Publishing\copy-nuget.bat&quot; &quot;$(MSBuildProjectDirectory)&quot;" />
+	</Target>
+
 	<ItemGroup>
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -60,6 +64,15 @@
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<PackageReference Include="DigitalProduction.Net" Version="0.7.1" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.40" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Platforms\Android\SaveFilePicker.cs">
+	    <ExcludeFromCurrentConfiguration>true</ExcludeFromCurrentConfiguration>
+	  </Compile>
+	  <Compile Update="Storage\SaveFilePicker.cs">
+	    <ExcludeFromCurrentConfiguration>true</ExcludeFromCurrentConfiguration>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
