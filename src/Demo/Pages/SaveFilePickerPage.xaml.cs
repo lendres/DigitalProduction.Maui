@@ -7,35 +7,38 @@ namespace DigitalProduction.Demo.Pages;
 
 public partial class SaveFilePickerPage : BasePage<SaveFilePickerPageViewModel>
 {
+	#region Fields
+
+	private ISaveFilePicker _saveFilePicker = DigitalProduction.Maui.Services.ServiceProvider.GetService<ISaveFilePicker>();
+
+	#endregion
+
 	public SaveFilePickerPage(SaveFilePickerPageViewModel viewModel) :
 		base(viewModel)
 	{
 		InitializeComponent();
 	}
 
-	async void OnBrowseForFile(object sender, EventArgs eventArgs)
+	async void OnBrowseWithDefaultFile(object sender, EventArgs eventArgs)
 	{
-		PickOptions pickOptions	= new() { PickerTitle="Select a Location for File Saving", FileTypes=CreateFilePickerFileType() };
-		string? result          = await BrowseForFile(pickOptions);
+		PickOptions pickOptions	= new() { FileTypes=CreateFilePickerFileType() };
+		string? result          = await _saveFilePicker.PickAsync(pickOptions, "New File Name.txt");
 
 		if (result != null)
 		{
-			SaveFileEntry.Text = result;
+			SaveFileEntry1.Text = result;
 		}
 	}
 
-	public async Task<string?> BrowseForFile(PickOptions options)
+	async void OnBrowseWithOutDefaultFile(object sender, EventArgs eventArgs)
 	{
-		try
-		{
-			return await BindingContext.SaveFilePicker.PickAsync(options, "New File Name.txt");
-		}
-		catch
-		{
-			// The user canceled or something went wrong.
-		}
+		PickOptions pickOptions	= new() { FileTypes=CreateFilePickerFileType() };
+		string? result          = await _saveFilePicker.PickAsync(pickOptions);
 
-		return null;
+		if (result != null)
+		{
+			SaveFileEntry2.Text = result;
+		}
 	}
 
 	private static FilePickerFileType CreateFilePickerFileType()

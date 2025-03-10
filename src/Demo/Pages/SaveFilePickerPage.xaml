@@ -15,17 +15,26 @@
 	<ScrollView>
 		<VerticalStackLayout StyleClass="VerticalGroupsLayout" MaximumWidthRequest="800">
 
-			<!-- Input File -->
 			<Grid StyleClass="FileBrowsingGridStyle">
-				<Label Grid.Row="0" Text="Output File" StyleClass="ControlLabel"/>
+				<Label Grid.Row="0" Text="With Default File" StyleClass="ControlLabel"/>
 				<Entry Grid.Row="1" Grid.Column="0" HorizontalOptions="Fill"
-					x:Name="SaveFileEntry"
-					Placeholder="Output File"
-					Text="{Binding SaveFile}">
+					x:Name="SaveFileEntry1"
+					Placeholder="Output File">
 				</Entry>
 				<Button Grid.Row="1" Grid.Column="1" StyleClass="StandardWidthButtonStyle" HorizontalOptions="Center" VerticalOptions="Fill"
-					Text="Browse" SemanticProperties.Hint="Browse for the input file."
-					Clicked="OnBrowseForFile"/>
+					Text="Browse"
+					Clicked="OnBrowseWithDefaultFile"/>
+			</Grid>
+
+			<Grid StyleClass="FileBrowsingGridStyle">
+				<Label Grid.Row="0" Text="Without Default File" StyleClass="ControlLabel"/>
+				<Entry Grid.Row="1" Grid.Column="0" HorizontalOptions="Fill"
+					x:Name="SaveFileEntry2"
+					Placeholder="Output File">
+				</Entry>
+				<Button Grid.Row="1" Grid.Column="1" StyleClass="StandardWidthButtonStyle" HorizontalOptions="Center" VerticalOptions="Fill"
+					Text="Browse"
+					Clicked="OnBrowseWithOutDefaultFile"/>
 			</Grid>
 
 		</VerticalStackLayout>

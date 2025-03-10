@@ -1,11 +1,12 @@
-﻿using CommunityToolkit.Maui.Storage;
-using DigitalProduction.Maui.Storage;
-using Microsoft.Maui.Storage;
-
-namespace DigitalProduction.Maui.Storage;
+﻿namespace DigitalProduction.Maui.Storage;
 
 public partial class SaveFilePicker
 {
+	async public partial Task<string?> PickAsync(PickOptions options)
+	{
+		return await PickAsync(options, string.Empty);
+	}
+
 	public partial Task<string?> PickAsync(PickOptions options, string suggestedFileName)
 	{
         //var folderPicker = await FolderPicker.Default.PickAsync();
