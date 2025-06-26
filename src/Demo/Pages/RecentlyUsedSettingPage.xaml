@@ -35,7 +35,7 @@
 					Maximum="20"
 					Value="{Binding NumberOfItemsToStore}"/>
 				<Label Grid.Column="1" Grid.Row="2"
-					Text="Number of items to show." VerticalOptions="Center" Margin="0" VerticalTextAlignment="Center" Padding="0"/>
+					Text="Number of items to remember." VerticalOptions="Center" Margin="0" VerticalTextAlignment="Center" Padding="0"/>
 			</Grid>
 
 			<HorizontalStackLayout StyleClass="BottomButtonRowStyle">
