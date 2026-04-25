@@ -58,7 +58,6 @@ public partial class PreferencesPageViewModel : BaseViewModel
 
 	#region Tests
 
-
 	public void GetStringReturnsDefaultWhenKeyDoesNotExist()
 	{
 		Preferences.Remove();
