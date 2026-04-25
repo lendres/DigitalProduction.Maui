@@ -140,12 +140,12 @@ public static class Preferences
 
 	#region Template Functions
 
-    private static T Get<T>(T defaultValue, string propertyName)
+    private static T Get<T>(T defaultValue, [CallerMemberName] string propertyName = "")
     {
         return Microsoft.Maui.Storage.Preferences.Default.Get(propertyName, defaultValue);
     }
 
-    private static void Set<T>(T? value, string propertyName)
+    private static void Set<T>(T? value,  [CallerMemberName] string propertyName = "")
     {
         Microsoft.Maui.Storage.Preferences.Default.Set(propertyName, value);
     }
