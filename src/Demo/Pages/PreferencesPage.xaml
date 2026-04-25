@@ -22,6 +22,12 @@
 				Text="Run Tests"
 				Command="{Binding RunTestsCommand}"/>
 
+			<ScrollView>
+				<Label
+					Text="{Binding TestResults}"
+					LineBreakMode="WordWrap" />
+			</ScrollView>
+
 		</VerticalStackLayout>
 	</ScrollView>
 
