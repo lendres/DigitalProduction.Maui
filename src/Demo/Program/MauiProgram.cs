@@ -9,7 +9,6 @@ using DigitalProduction.Maui;
 using DigitalProduction.Maui.Services;
 using DigitalProduction.Maui.Storage;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace DigitalProduction.Demo;
 
@@ -42,11 +41,13 @@ public static class MauiProgram
 	private static void RegisterViewsAndViewModels(in IServiceCollection services)
 	{
 		// Controls gallery page.
+		services.AddTransient<StorageGalleryPage, StorageGalleryViewModel>();
 		services.AddTransient<ControlsGalleryPage, ControlsGalleryViewModel>();
 		services.AddTransientWithShellRoute<DynamicMenusPage, DynamicMenusPageViewModel>();
 		services.AddTransientWithShellRoute<RecentlyUsedMenuPage, RecentlyUsedMenuPageViewModel>();
 		services.AddTransientWithShellRoute<StepperPage, StepperPageViewModel>();
 		services.AddTransientWithShellRoute<SaveFilePickerPage, SaveFilePickerPageViewModel>();
+		services.AddTransientWithShellRoute<PreferencesPage, PreferencesPageViewModel>();
 	}
 
 	private static IServiceCollection AddTransientWithShellRoute<TPage, TViewModel>(this IServiceCollection services)

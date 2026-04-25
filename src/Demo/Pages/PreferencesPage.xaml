@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:BasePage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:pages="clr-namespace:DigitalProduction.Demo.Pages"
+	xmlns:system="clr-namespace:System;assembly=mscorlib"
+	xmlns:dpcontrols="clr-namespace:DigitalProduction.Maui.Controls;assembly=DigitalProduction.Maui"
+    x:Class="DigitalProduction.Demo.Pages.PreferencesPage"
+    xmlns:viewmodel="clr-namespace:DigitalProduction.Demo.ViewModels"
+    x:TypeArguments="viewmodel:PreferencesPageViewModel"
+    x:DataType="viewmodel:PreferencesPageViewModel"
+	Title="Preferences">
+
+	<ScrollView>
+		<VerticalStackLayout StyleClass="VerticalGroupsLayout" MaximumWidthRequest="800">
+
+			<Button
+				HorizontalOptions="Center"
+				HeightRequest="32"
+				WidthRequest="230"
+				Text="Run Tests"
+				Command="{Binding RunTestsCommand}"/>
+
+			<ScrollView>
+				<Label
+					Text="{Binding TestResults}"
+					LineBreakMode="WordWrap" />
+			</ScrollView>
+
+		</VerticalStackLayout>
+	</ScrollView>
+
+</pages:BasePage>

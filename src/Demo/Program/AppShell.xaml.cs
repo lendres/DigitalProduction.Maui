@@ -11,6 +11,7 @@ public partial class AppShell : Shell
 		CreateViewModelMapping<RecentlyUsedMenuPage, RecentlyUsedMenuPageViewModel, ControlsGalleryPage, ControlsGalleryViewModel>(),
 		CreateViewModelMapping<StepperPage, StepperPageViewModel, ControlsGalleryPage, ControlsGalleryViewModel>(),
 		CreateViewModelMapping<SaveFilePickerPage, SaveFilePickerPageViewModel, ControlsGalleryPage, ControlsGalleryViewModel>(),
+		CreateViewModelMapping<PreferencesPage, PreferencesPageViewModel, StorageGalleryPage, StorageGalleryViewModel>(),
 	]);
 
 	public AppShell()

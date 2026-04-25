@@ -34,4 +34,11 @@
 		<ShellContent ContentTemplate="{DataTemplate local:ControlsGalleryPage}"/>
 	</FlyoutItem>
 
+	<FlyoutItem
+		Title="Storage"
+		Route="StorageGalleryPage"
+		Icon="{OnPlatform Default='dotnet_bot.png', MacCatalyst={x:Null}}">
+		<ShellContent ContentTemplate="{DataTemplate local:StorageGalleryPage}"/>
+	</FlyoutItem>
+
 </Shell>

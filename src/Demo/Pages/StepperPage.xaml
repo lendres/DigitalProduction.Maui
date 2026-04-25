@@ -9,7 +9,7 @@
     xmlns:viewmodel="clr-namespace:DigitalProduction.Demo.ViewModels"
     x:TypeArguments="viewmodel:StepperPageViewModel"
     x:DataType="viewmodel:StepperPageViewModel"
-	Title="Dynamic Menus">
+	Title="Stepper Control">
 
 	<ContentPage.Resources>
 		<Style TargetType="dpcontrols:MinusButton" BasedOn="{StaticResource MinusButtonBaseStyle}" x:Key="RoundMinusButtonStyle">
@@ -98,18 +98,21 @@
 				Command="{Binding IncrementValueCommand}"/>
 
 			<dpcontrols:Stepper
+				HorizontalOptions="Center"
 				Increment="2"
 				Minimum="5"
 				Maximum="10"
 				Value="6"/>
 
 			<dpcontrols:Stepper
+				HorizontalOptions="Center"
 				Increment="{Binding Increment}"
 				Minimum="{Binding Minimum}"
 				Maximum="{Binding Maximum}"
 				Value="{Binding Value}"/>
 
 			<dpcontrols:Stepper
+				HorizontalOptions="Center"
 				Increment="{Binding Increment}"
 				Minimum="{Binding Minimum}"
 				Maximum="{Binding Maximum}"
