@@ -9,7 +9,7 @@ public partial class RecentlyUsedMenuPage : BasePage<RecentlyUsedMenuPageViewMod
 		base(viewModel)
 	{
 		InitializeComponent();
-		viewModel.MenuHostingPage	= this;
+		viewModel.MenuHostingPage = this;
 	}
 
 	async void OnSettingsClicked(object? sender, EventArgs args)
