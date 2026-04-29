@@ -198,6 +198,14 @@ public class RecentPathsManagerService : IRecentPathsManagerService
 	}
 
 	/// <summary>
+	/// Gets the path at the top of the entries.
+	/// </summary>
+	public string GetTop()
+	{
+		return _paths[0];
+	}
+
+	/// <summary>
 	/// Puts the specified path at the top of the entries.  If the supplied path is already located in the
 	///	list at some other position, it is removed from that position put on top, moving the other paths down.
 	/// </summary>
