@@ -21,8 +21,13 @@
 				Text="Settings..."
 				Clicked="OnSettingsClicked"/>
 			<dpcontrols:RecentlyUsedMenuFlyout
-				Text="Recently Used"
+				Text="Recently Used ViewModel Command"
 				PathCommand="{Binding ShowSelectedMessageCommand}"
+				PathNotFoundCommand="{Binding ShowRemovedMessageCommand}"
+				RecentPathsManagerService="{Binding RecentPathsManagerService}"/>
+			<dpcontrols:RecentlyUsedMenuFlyout
+				Text="Recently Used Code Behind Clicked"
+				PathClicked="OnRecentPathClicked"
 				PathNotFoundCommand="{Binding ShowRemovedMessageCommand}"
 				RecentPathsManagerService="{Binding RecentPathsManagerService}"/>
 		</MenuBarItem>

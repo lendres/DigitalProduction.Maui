@@ -9,7 +9,7 @@ public partial class SaveFilePickerPage : BasePage<SaveFilePickerPageViewModel>
 {
 	#region Fields
 
-	private ISaveFilePicker _saveFilePicker = DigitalProduction.Maui.Services.ServiceProvider.GetService<ISaveFilePicker>();
+	private ISaveFilePicker _saveFilePicker = IPlatformApplication.Current!.Services.GetRequiredService<ISaveFilePicker>();
 
 	#endregion
 
