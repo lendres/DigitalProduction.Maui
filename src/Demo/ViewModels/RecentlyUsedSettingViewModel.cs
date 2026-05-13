@@ -5,7 +5,7 @@ namespace DigitalProduction.Demo.ViewModels;
 
 public partial class RecentlyUsedSettingViewModel : BaseViewModel
 {
-	private readonly IRecentPathsManagerService _recentPathsManagerService = Maui.Services.ServiceProvider.GetService<IRecentPathsManagerService>();
+	private readonly IRecentPathsManagerService _recentPathsManagerService = IPlatformApplication.Current!.Services.GetRequiredService<IRecentPathsManagerService>();
 
 	public RecentlyUsedSettingViewModel()
 	{

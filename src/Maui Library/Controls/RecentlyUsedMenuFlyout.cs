@@ -8,7 +8,10 @@ namespace DigitalProduction.Maui.Controls;
 /// </summary>
 public partial class RecentlyUsedMenuFlyout : MenuFlyoutSubItem
 {
-	#region Fields
+	#region Events
+
+	public event EventHandler<PathClickedEventArgs>? PathClicked;
+
 	#endregion
 
 	#region Construction
@@ -121,15 +124,22 @@ public partial class RecentlyUsedMenuFlyout : MenuFlyoutSubItem
 		OnPathsChanged(RecentPathsManagerService.GetRecentPaths());
 	}
 
+	private void OnPathClicked(string path)
+	{
+		PathClicked?.Invoke(this, new PathClickedEventArgs(path));
+	}
+
 	/// <summary>
 	/// This is used to prevent building the menus multiple times.  It checks if all the properties are in place and
 	/// then builds the menus once they are available.
 	/// 
 	/// By using this, we are requiring all the properties to be set.  If one is left off, there will be no functionality.
+	/// 
+	/// Either PathCommand or PathClicked must be set, but not both.  If both are set, PathCommand will be used.
 	/// </summary>
 	private void CheckAndBuildMenus()
 	{
-		if (RecentPathsManagerService != null && PathCommand != null && PathNotFoundCommand != null)
+		if (RecentPathsManagerService != null && (PathCommand != null || PathClicked != null) && PathNotFoundCommand != null)
 		{
 			OnPathsChanged(RecentPathsManagerService.GetRecentPaths());
 		}
@@ -143,6 +153,8 @@ public partial class RecentlyUsedMenuFlyout : MenuFlyoutSubItem
 
 	private void CreateFlyoutItems(List<string> paths)
 	{
+		ICommand pathCommand = PathCommand ?? new Command<string>(OnPathClicked);
+
 		// Generate all the menu item instances.
 		for (int i = 0; i < paths.Count; i++)
 		{
@@ -150,7 +162,7 @@ public partial class RecentlyUsedMenuFlyout : MenuFlyoutSubItem
 			{
 				Number						= i,
 				Path						= paths[i],
-				PathCommand					= PathCommand,
+				PathCommand					= pathCommand,
 				PathNotFoundCommand			= PathNotFoundCommand,
 				RecentPathsManagerService	= RecentPathsManagerService
 			};
