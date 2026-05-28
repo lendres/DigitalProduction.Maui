@@ -27,6 +27,11 @@
 		<Title>$(AssemblyName)</Title>
 	</PropertyGroup>
 
+	<PropertyGroup>
+		<LangVersion>preview</LangVersion>
+		<MauiEnableXamlCBindingWithSourceCompilation>true</MauiEnableXamlCBindingWithSourceCompilation>
+	</PropertyGroup>
+
 	<Target Name="RunPostBuildEventAfterPack" AfterTargets="Pack" Condition="'$(Configuration)' == 'Release'">
 		<Exec Command="call &quot;$(MSBuildProjectDirectory)\Publishing\copy-nuget.bat&quot; &quot;$(MSBuildProjectDirectory)&quot;" />
 	</Target>
