@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Maui.Views;
+﻿using CommunityToolkit.Maui;
+using CommunityToolkit.Maui.Extensions;
 using DigitalProduction.Demo.ViewModels;
 using DigitalProduction.Maui.Controls;
 
@@ -16,7 +17,12 @@ public partial class RecentlyUsedMenuPage : BasePage<RecentlyUsedMenuPageViewMod
 	async void OnSettingsClicked(object? sender, EventArgs args)
 	{
 		RecentlyUsedSettingPage view = new(new RecentlyUsedSettingViewModel());
-		_ = await Shell.Current.ShowPopupAsync(view);
+		_ = await Shell.Current.ShowPopupAsync<bool>(view, new PopupOptions
+		{
+			CanBeDismissedByTappingOutsideOfPopup = false,
+			Shape = null,
+			Shadow = null
+		});
 	}
 
 	private async void OnRecentPathClicked(object? sender, PathClickedEventArgs eventArgs)

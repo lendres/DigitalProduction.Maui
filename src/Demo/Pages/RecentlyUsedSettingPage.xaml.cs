@@ -3,7 +3,7 @@ using CommunityToolkit.Maui.Views;
 
 namespace DigitalProduction.Demo.Pages;
 
-public partial class RecentlyUsedSettingPage : Popup
+public partial class RecentlyUsedSettingPage : Popup<bool>
 {
 	public RecentlyUsedSettingPage(RecentlyUsedSettingViewModel viewModel)
 	{
