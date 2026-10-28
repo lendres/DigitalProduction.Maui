@@ -27,6 +27,6 @@ public partial class RecentlyUsedMenuPage : BasePage<RecentlyUsedMenuPageViewMod
 
 	private async void OnRecentPathClicked(object? sender, PathClickedEventArgs eventArgs)
 	{
-		await DisplayAlert("Menu Clicked", $"The path {eventArgs.Path}  was selected.", "OK");
+		await DisplayAlertAsync("Menu Clicked", $"The path {eventArgs.Path}  was selected.", "OK");
 	}
 }

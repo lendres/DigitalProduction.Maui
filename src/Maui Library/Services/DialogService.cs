@@ -7,6 +7,6 @@ public class DialogService : IDialogService
 	public void ShowMessage(string title, string message, string closeButtonText)
 	{
 		System.Diagnostics.Debug.Assert(HostingPage != null, "The HostingPage property must be set before calling ShowMessage.");
-		HostingPage.DisplayAlert(title, message, closeButtonText);
+		HostingPage.DisplayAlertAsync(title, message, closeButtonText);
 	}
 }
