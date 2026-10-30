@@ -232,11 +232,6 @@
 		<Setter Property="HorizontalTextAlignment" Value="Center"/>
 	</Style>
 
-	<Style TargetType="ListView">
-		<Setter Property="SeparatorColor" Value="{AppThemeBinding Light={DynamicResource Gray200}, Dark={DynamicResource Gray500}}"/>
-		<Setter Property="RefreshControlColor" Value="{AppThemeBinding Light={DynamicResource Gray900}, Dark={DynamicResource Gray200}}"/>
-	</Style>
-
 	<Style TargetType="Picker">
 		<Setter Property="TextColor" Value="{AppThemeBinding Light={DynamicResource Gray900}, Dark={DynamicResource White}}"/>
 		<Setter Property="TitleColor" Value="{AppThemeBinding Light={DynamicResource ControlLabelLight}, Dark={DynamicResource ControlLabelDark}}"/>
